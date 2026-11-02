@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>York 023-0372 Ballot Guide — Nov 3, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dem:#1f4fbf; --dem-bg:#eaf0fd; --dem-line:#9db5ee;
+    --rep:#b4232a; --rep-bg:#fdecec; --rep-line:#efa3a6;
+    --oth:#5b4b8a; --oth-bg:#efecf7; --oth-line:#b8acd9;
+    --ink:#111; --muted:#555; --rule:#222; --head:#d9d9d9; --sect:#c8c8c8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#e9e7e2;font-family:"Open Sans",Arial,sans-serif;color:var(--ink);}
+  .sheet{max-width:1100px;margin:24px auto;background:#fff;padding:28px 32px 36px;box-shadow:0 1px 6px rgba(0,0,0,.15);position:relative}
+  .corner{position:absolute;width:16px;height:16px;border:3px solid #000;border-radius:4px}
+  .corner::after{content:"";position:absolute;inset:3px;background:#000;border-radius:1px}
+  .c1{top:12px;left:12px}.c2{top:12px;right:12px}.c3{bottom:12px;left:12px}.c4{bottom:12px;right:12px}
+  .topline{text-align:center;font-weight:800;letter-spacing:.04em;font-size:15px;margin-bottom:6px}
+  .notice{text-align:center;font-size:12px;color:var(--muted);margin-bottom:14px}
+  .hdr{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:12px;border-bottom:2px solid var(--rule);padding-bottom:10px;margin-bottom:12px}
+  .hdr .mid{text-align:center}
+  .hdr .mid b{display:block;font-size:17px}
+  .hdr .mid span{font-size:12px}
+  .hdr .right{text-align:right;font-weight:700;font-size:15px}
+  .hdr .right span{display:block;font-weight:400;font-size:12px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
+  .toolbar button{font:600 12px "Open Sans",sans-serif;border:1.5px solid #222;background:#fff;padding:6px 10px;border-radius:3px;cursor:pointer}
+  .toolbar button:hover{background:#f2f2f2}
+  .legend{margin-left:auto;display:flex;gap:10px;font-size:12px;align-items:center;flex-wrap:wrap}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:4px}
+  .instr{font-size:12.5px;line-height:1.45;border:1.5px solid var(--rule);padding:10px 12px;margin-bottom:12px}
+  .instr b{font-weight:700}
+  .cols{columns:2 480px;column-gap:22px}
+  .section{break-inside:avoid;background:var(--sect);text-align:center;font-weight:800;font-size:13px;letter-spacing:.06em;padding:4px;border:1.5px solid var(--rule);margin:0 0 10px}
+  .race{break-inside:avoid;border:1.5px solid var(--rule);margin:0 0 12px}
+  .race-h{background:var(--head);padding:6px 9px;border-bottom:1.5px solid var(--rule)}
+  .race-h .t{font-weight:800;font-size:12.5px;text-transform:uppercase;line-height:1.3}
+  .race-h .s{font-size:11px;color:#333;margin-top:1px}
+  .race-h .v{font-size:11px;margin-top:2px}
+  .race-note{font-size:11.5px;color:#333;padding:6px 9px;border-bottom:1px solid #bbb;background:#fafafa;line-height:1.4}
+  .cand{border-left:6px solid transparent;border-bottom:1px solid #ddd}
+  .cand:last-child{border-bottom:0}
+  .cand.D{border-left-color:var(--dem)} .cand.R{border-left-color:var(--rep)} .cand.O{border-left-color:var(--oth)}
+  .row{display:flex;align-items:center;gap:10px;padding:8px 9px;cursor:pointer;user-select:none}
+  .row:hover{background:#f6f6f6}
+  .box{flex:0 0 auto;width:28px;height:17px;border:2px solid #111;border-radius:3px;background:#fff;position:relative}
+  .box:hover{outline:2px solid #888;outline-offset:1px}
+  .cand.picked .box{background:#111}
+  .cand.picked .row{background:#f3f3f3}
+  .name{flex:1;font-size:13.5px;font-weight:600;line-height:1.25}
+  .name small{display:block;font-weight:400;font-size:11.5px;color:var(--muted)}
+  .party{font-size:11px;font-weight:700;padding:2px 7px;border-radius:10px;white-space:nowrap}
+  .D .party{color:var(--dem);background:var(--dem-bg);border:1px solid var(--dem-line)}
+  .R .party{color:var(--rep);background:var(--rep-bg);border:1px solid var(--rep-line)}
+  .O .party{color:var(--oth);background:var(--oth-bg);border:1px solid var(--oth-line)}
+  .chev{flex:0 0 auto;font-size:11px;color:#666;transition:transform .15s}
+  .cand.open .chev{transform:rotate(90deg)}
+  .info{display:none;padding:2px 12px 10px 47px;font-size:12.5px;line-height:1.45}
+  .cand.open .info{display:block}
+  .D .info{background:linear-gradient(90deg,var(--dem-bg),#fff 70%)}
+  .R .info{background:linear-gradient(90deg,var(--rep-bg),#fff 70%)}
+  .O .info{background:linear-gradient(90deg,var(--oth-bg),#fff 70%)}
+  .info ul{margin:4px 0 0;padding-left:16px}
+  .info li{margin:2px 0}
+  .info .k{font-weight:700}
+  .src{font-size:11px;padding:5px 9px;border-top:1px dashed #bbb;color:var(--muted)}
+  .src a{color:#333}
+  .ret .row{cursor:default}
+  .yn{display:flex;gap:14px;padding:0 9px 8px 47px;font-size:12px;font-weight:700}
+  .yn label{display:flex;align-items:center;gap:6px;cursor:pointer}
+  .yn .box{width:24px;height:15px}
+  .yn label.on .box{background:#111}
+  .write{display:flex;align-items:center;gap:10px;padding:8px 9px;font-size:12px;color:#444}
+  .write .line{flex:1;border-bottom:1.5px dashed #555;height:14px}
+  #summary{margin-top:18px;border:2px solid var(--rule)}
+  #summary h3{margin:0;background:var(--head);padding:7px 10px;font-size:13px;letter-spacing:.04em;border-bottom:1.5px solid var(--rule)}
+  #summary .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0}
+  #summary .it{padding:6px 10px;border-bottom:1px solid #e3e3e3;font-size:12.5px;display:flex;justify-content:space-between;gap:10px}
+  #summary .it span:first-child{color:var(--muted)}
+  #summary .it b.D{color:var(--dem)} #summary .it b.R{color:var(--rep)} #summary .it b.O{color:var(--oth)}
+  #summary .empty{padding:10px;font-size:12.5px;color:var(--muted)}
+  .foot{text-align:center;font-weight:700;font-size:13px;margin-top:18px}
+  .disclaim{font-size:11px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.4}
+  @media (max-width:640px){
+    .sheet{margin:0;padding:22px 12px 30px}
+    .hdr{grid-template-columns:1fr;text-align:center}.hdr .right{text-align:center}
+    .info{padding-left:14px}.yn{padding-left:14px}
+    .legend{margin-left:0}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
+  <div class="topline">SAMPLE BALLOT · RESEARCH GUIDE</div>
+  <div class="notice">Personal study copy built from the York 023-0372 sample ballot. Not an official ballot.</div>
+  <div class="hdr">
+    <div style="font-size:12px;color:#333">DuPage County</div>
+    <div class="mid"><b>GENERAL ELECTION</b><span>York 023-0372 · DuPage County</span></div>
+    <div class="right">November 3, 2026<span>Election Day</span></div>
+  </div>
+
+  <div class="toolbar">
+    <button id="expandAll">Expand all info</button>
+    <button id="collapseAll">Collapse all</button>
+    <button id="clearPicks">Clear my marks</button>
+    <div class="legend">
+      <span><i style="background:var(--dem)"></i>Democratic</span>
+      <span><i style="background:var(--rep)"></i>Republican</span>
+      <span><i style="background:var(--oth)"></i>Independent / Other</span>
+    </div>
+  </div>
+
+  <div class="instr"><b>How to use:</b> Click a candidate's <b>name</b> to show or hide background notes. Click the <b>box</b> on the left to practice-mark a choice; it fills in like the real ballot, and your marks are listed in "My practice marks" at the bottom. Marks stay only in this browser. The notes are short summaries of news coverage, not endorsements. Each race links to sources.</div>
+
+  <div class="cols" id="ballot"></div>
+
+  <div id="summary">
+    <h3>MY PRACTICE MARKS</h3>
+    <div id="sumBody"></div>
+  </div>
+
+  <div class="foot">Read Both Sides of the Ballot</div>
+  <div class="disclaim">Candidate notes were compiled on Nov 2, 2026, from press coverage, Ballotpedia, the DuPage County Clerk's candidate listing and Illinois State Bar Association ratings. Confirm details with official sources. Your official ballot is the one handed to you at your polling place.</div>
+</div>
+
+<script>
+const BALLOT = [
+ {section:"FEDERAL"},
+ {id:"sen", title:"For United States Senator", vote:"Vote for ONE", note:"Open seat. Sen. Dick Durbin is retiring after serving since 1997.",
+  src:[["Axios voter guide","https://www.axios.com/local/chicago/2026/10/07/illinois-u-s-senate-election-stratton-vs-tracy-voter-guide"],["Capitol News Illinois (Harrington)","https://capitolnewsillinois.com/news/third-party-u-s-senate-candidate-gives-voters-an-alternative/"]],
+  c:[
+   {n:"Juliana Stratton",p:"D",party:"Democratic",sub:"Illinois Lieutenant Governor",info:[
+     "<span class='k'>Experience:</span> lieutenant governor under Pritzker since 2019, and Illinois's first Black lieutenant governor.",
+     "<span class='k'>Primary:</span> won a crowded Democratic primary with about 40%, beating U.S. Reps. Raja Krishnamoorthi and Robin Kelly.",
+     "<span class='k'>Backing:</span> endorsed by Gov. Pritzker and Sen. Tammy Duckworth.",
+     "<span class='k'>Points raised:</span> Tracy has criticized her for declining most forums and debates. The two appeared together once, at an Oct. 20 WTTW forum."]},
+   {n:"Don Tracy",p:"R",party:"Republican",sub:"Attorney, former Illinois GOP chair",info:[
+     "<span class='k'>Background:</span> attorney from Springfield, born in Urbana, and former chair of the Illinois Republican Party.",
+     "<span class='k'>Priorities:</span> says his top priority is lowering the cost of living. Argues Illinois needs two-party competition.",
+     "<span class='k'>Context:</span> no Republican has won a U.S. Senate race in Illinois since 2010."]},
+   {n:"Whitfield Harrington Jr",p:"O",party:"American Center Party",sub:"Chicago pastor",info:[
+     "<span class='k'>Background:</span> 46-year-old Chicago pastor and former financial services professional. He founded the American Center Party as a centrist alternative.",
+     "<span class='k'>Platform:</span> affordability, health care access, government reform and free community college. Critical of how tariffs are being used.",
+     "<span class='k'>Why it matters:</span> if he gets 5% of the vote, his party becomes an established party in Illinois, which makes future ballot access much easier."]}
+  ]},
+ {section:"STATE"},
+ {id:"gov", title:"For Governor and Lieutenant Governor", vote:"Vote for ONE", write:true, note:"A rematch of 2022, when Pritzker beat Bailey by about 12–13 points.",
+  src:[["WBEZ: What to know","https://www.wbez.org/government-politics/elections/2026/10/01/what-to-know-llinois-governor-race-jb-pritzker-darren-bailey-collin-corbett"],["Sun-Times","https://chicago.suntimes.com/elections/2026/10/13/jb-pritzker-darren-bailey-collin-corbett-illinois-governor-election-november-midterm"]],
+  c:[
+   {n:"JB Pritzker",n2:"Christian Mitchell",p:"D",party:"Democratic",sub:"Incumbent Governor",info:[
+     "<span class='k'>Pritzker:</span> governor since 2019, now seeking a rare third term. He would be the first Illinois governor elected to a third term since Jim Thompson in 1982.",
+     "<span class='k'>Points raised:</span> widely seen as a possible 2028 presidential candidate. Critics, including Corbett, point to state budgets that have grown during his tenure.",
+     "<span class='k'>Mitchell (Lt. Gov.):</span> state representative from 2013 to 2019, then Pritzker's deputy governor from 2019 to 2023."]},
+   {n:"Darren Bailey",n2:"Aaron B. Del Mar",p:"R",party:"Republican",sub:"Former state senator, farmer",info:[
+     "<span class='k'>Bailey:</span> southern Illinois farmer and former state senator who founded a private Christian school. He was the 2022 GOP nominee.",
+     "<span class='k'>Backing:</span> endorsed by President Trump. Campaigns heavily on property taxes and cost of living.",
+     "<span class='k'>Points raised:</span> Pritzker's campaign has spent heavily portraying him as too conservative for Illinois, especially on social issues.",
+     "<span class='k'>Personal:</span> his son, daughter-in-law and two grandchildren died in a helicopter crash in 2025.",
+     "<span class='k'>Del Mar:</span> his running mate for lieutenant governor."]},
+   {n:"Collin Corbett",n2:"Carolyn Schofield",p:"O",party:"Independent",sub:"Former GOP strategist",info:[
+     "<span class='k'>Corbett:</span> millennial political consultant who left the Republican Party to run as a moderate independent. He gathered about 37,000 signatures to get on the ballot.",
+     "<span class='k'>Pitch:</span> says there's middle ground between Pritzker and Bailey. He criticizes both Pritzker's spending and Trump-style politics.",
+     "<span class='k'>Schofield:</span> I couldn't find much coverage of his running mate."]}
+  ]},
+ {id:"ag", title:"For Attorney General", vote:"Vote for ONE",
+  src:[["WBEZ: AG race","https://www.wbez.org/government-politics/elections/2026/10/01/what-to-know-candidates-race-illinois-attorney-general-kwame-raoul-bob-fioretti"]],
+  c:[
+   {n:"Kwame Raoul",p:"D",party:"Democratic",sub:"Incumbent Attorney General",info:[
+     "<span class='k'>Experience:</span> attorney general since 2019 and seeking a third term. Before that, a state senator for about 14 years, first appointed to Barack Obama's old seat.",
+     "<span class='k'>Record:</span> has filed dozens of lawsuits against the Trump administration over federal funding cuts and other actions. Defended the SAFE-T Act and the end of cash bail."]},
+   {n:"Robert W. Fioretti",p:"R",party:"Republican",sub:"Former Chicago alderman",info:[
+     "<span class='k'>Background:</span> two-term 2nd Ward alderman, former assistant attorney general and attorney with City Hall's legal office.",
+     "<span class='k'>Platform:</span> anti-corruption and public safety. Wants changes to the SAFE-T Act and has formed a public-safety commission.",
+     "<span class='k'>Points raised:</span> he has run often, including for Chicago mayor, Cook County Board president, Cook County state's attorney (2024) and state Senate."]}
+  ]},
+ {id:"sos", title:"For Secretary of State", vote:"Vote for ONE",
+  src:[["Sun-Times: SOS race","https://chicago.suntimes.com/elections/2026/10/01/what-to-know-illinois-secretary-of-state-race-alexi-giannoulias-diane-harris"],["Capitol News Illinois","https://www.newsfromthestates.com/node/434394"]],
+  c:[
+   {n:"Alexi Giannoulias",p:"D",party:"Democratic",sub:"Incumbent Secretary of State",info:[
+     "<span class='k'>Experience:</span> secretary of state since 2023. Former state treasurer, elected at age 30 in 2006.",
+     "<span class='k'>Record:</span> has focused on DMV modernization and fighting book bans.",
+     "<span class='k'>Points raised:</span> he is also a frontrunner in Chicago's 2027 mayoral race, so he could leave this office early if he wins both."]},
+   {n:"Diane M. Harris",p:"R",party:"Republican",sub:"Joliet Junior College trustee",info:[
+     "<span class='k'>Background:</span> Will County business owner and Joliet Junior College board member. Ran for state Senate in 2022 and lost.",
+     "<span class='k'>Platform:</span> says the DMV still needs work, and criticizes Giannoulias for running for mayor at the same time.",
+     "<span class='k'>Context:</span> reported about $134 cash on hand at the end of September, versus roughly $19 million for Giannoulias."]}
+  ]},
+ {id:"comp", title:"For Comptroller", vote:"Vote for ONE", write:true, note:"Open seat. Susana Mendoza is not running again; she is running for Chicago mayor.",
+  src:[["Sun-Times: Comptroller","https://chicago.suntimes.com/elections/2026/10/01/what-to-know-illinois-comptroller-race-bryan-drew-state-rep-margaret-croke"],["WTTW","https://news.wttw.com/2026/09/29/replacing-mendoza-candidates-vie-be-state-s-first-new-comptroller-decade"]],
+  c:[
+   {n:"Margaret Croke",p:"D",party:"Democratic",sub:"State Representative (12th District, Chicago)",info:[
+     "<span class='k'>Background:</span> Chicago state representative. Narrowly won a four-way Democratic primary with about 35%.",
+     "<span class='k'>Backing:</span> endorsed by Gov. Pritzker and House Speaker Chris Welch, and led the primary field in fundraising.",
+     "<span class='k'>Points raised:</span> Drew argues those endorsements are a conflict of interest for an office meant to be an independent fiscal watchdog."]},
+   {n:"Bryan Drew",p:"R",party:"Republican",sub:"Attorney & café owner, Benton",info:[
+     "<span class='k'>Background:</span> private attorney and small-business owner from southern Illinois. Unopposed in the GOP primary.",
+     "<span class='k'>Platform:</span> pitches himself as an independent check on state spending.",
+     "<span class='k'>Context:</span> modest fundraising, about $54,000 early in the year."]}
+  ]},
+ {id:"treas", title:"For Treasurer", vote:"Vote for ONE", write:true,
+  src:[["Axios: Statewide races","https://www.axios.com/local/chicago/2026/10/06/illinois-2026-election-statewide-offices-democrats-republicans"],["Capitol News Illinois","https://www.newsfromthestates.com/node/434394"]],
+  c:[
+   {n:"Michael W. Frerichs",p:"D",party:"Democratic",sub:"Incumbent Treasurer",info:[
+     "<span class='k'>Experience:</span> treasurer since 2015, seeking a fourth term. The office invests state funds and runs the unclaimed-property program (I-Cash).",
+     "<span class='k'>Context:</span> he did not take part in WTTW's voter guide."]},
+   {n:"Max Solomon",p:"R",party:"Republican",sub:"Attorney",info:[
+     "<span class='k'>Background:</span> little-known attorney. He also filed to run for governor in the GOP primary.",
+     "<span class='k'>How he got here:</span> no Republican filed for treasurer, so he won the nomination through a write-in campaign."]}
+  ]},
+ {id:"ss21", title:"For State Senator", sub:"Twenty-First Legislative District", vote:"Vote for ONE",
+  src:[["Ballotpedia / ILGA","https://ilga.gov/senate/members/details/3339"],["Shaw Local questionnaire (Berkowicz)","https://www.shawlocal.com/the-herald-news/2026/02/04/2026-election-questionnaire-julie-berkowicz-illinois-state-senate-district-21"]],
+  c:[
+   {n:"Laura Ellman",p:"D",party:"Democratic",sub:"Incumbent State Senator (Naperville)",info:[
+     "<span class='k'>Experience:</span> state senator since January 2019, when she flipped a Republican-held seat.",
+     "<span class='k'>Background:</span> degrees from Grinnell College and the University of Iowa. Previously worked at Argonne National Laboratory."]},
+   {n:"Julie Berkowicz",p:"R",party:"Republican",sub:"Will County Board member",info:[
+     "<span class='k'>Experience:</span> Will County Board member (District 10) and forest preserve commissioner since 2018.",
+     "<span class='k'>Background:</span> age 64. Previously worked in retail sales."]}
+  ]},
+ {id:"h42", title:"For Representative in the General Assembly", sub:"Forty-Second Representative District", vote:"Vote for ONE",
+  src:[["Ballotpedia: DeLaRosa","https://ballotpedia.org/Margaret_DeLaRosa"],["Ballotpedia: Trussell","https://ballotpedia.org/Stephanie_Trussell"]],
+  c:[
+   {n:"Margaret A. DeLaRosa",p:"D",party:"Democratic",sub:"Appointed State Representative (Glen Ellyn)",info:[
+     "<span class='k'>Experience:</span> appointed in October 2025 to replace Terra Costa Howard, who became a judge. This is her first general election for the seat.",
+     "<span class='k'>Background:</span> former Glenbard District 87 school board president. Has an accounting degree from DePaul. Won the primary with about 59%."]},
+   {n:"Stephanie W. Trussell",p:"R",party:"Republican",sub:"Former GOP Lt. Gov. nominee",info:[
+     "<span class='k'>Background:</span> she was Darren Bailey's running mate for lieutenant governor in 2022 and got about 42% statewide.",
+     "<span class='k'>Note:</span> she has not filled out Ballotpedia's 2026 candidate survey."]}
+  ]},
+ {section:"COUNTY"},
+ {id:"chair", title:"For Chairperson of the County Board", vote:"Vote for ONE",
+  src:[["DuPage County bio","https://www.dupagecounty.gov/conroy"],["BallotReady: Grasso","https://www.ballotready.org/people/gary-grasso"]],
+  c:[
+   {n:"Deb Conroy",p:"D",party:"Democratic",sub:"Incumbent Board Chair (Elmhurst)",info:[
+     "<span class='k'>Experience:</span> elected in 2022 as the first woman, and first Democrat in decades, to chair the DuPage board. Before that, 10 years as a state representative.",
+     "<span class='k'>Focus:</span> mental health, food and housing insecurity, and affordable housing."]},
+   {n:"Gary Grasso",p:"R",party:"Republican",sub:"Burr Ridge Mayor",info:[
+     "<span class='k'>Experience:</span> Burr Ridge village president (2005–2012 and 2019–present). Former DuPage County Board member.",
+     "<span class='k'>Background:</span> litigation attorney who founded the firm Grasso Bass. Ran for attorney general in the 2018 GOP primary."]}
+  ]},
+ {id:"sheriff", title:"For Sheriff", vote:"Vote for ONE", note:"Open seat. Sheriff James Mendrick ran for governor instead.",
+  src:[["Daily Herald: Sheriff race","https://www.dailyherald.com/?p=1359014"]],
+  c:[
+   {n:"Peter Joseph Coolidge",p:"D",party:"Democratic",sub:"Retired DuPage sheriff's deputy (West Chicago)",info:[
+     "<span class='k'>Experience:</span> nearly 28 years in the sheriff's office (corrections, patrol, court security). Retired in 2024.",
+     "<span class='k'>Platform:</span> rebuild community trust, use license-plate readers responsibly, expand free gun-safety and safe-storage training, and create teams for domestic and sexual violence."]},
+   {n:"Sean T. Noonan",p:"R",party:"Republican",sub:"Oakbrook Terrace police officer (Elmhurst)",info:[
+     "<span class='k'>Experience:</span> about 23 years in law enforcement, mostly as a Bloomingdale officer who rose to sergeant. Former DuPage County Board member.",
+     "<span class='k'>Platform:</span> calls himself a reformer who wants to take the office to the next level and strengthen ties with local police departments.",
+     "<span class='k'>Primary:</span> beat Undersheriff Eddie Moore roughly 2 to 1."]}
+  ]},
+ {id:"clerk", title:"For County Clerk", vote:"Vote for ONE", note:"This office runs DuPage elections. Clerk Jean Kaczmarek lost her primary after a long legal fight with the county board over budgeting.",
+  src:[["Daily Herald: Clerk primary","https://www.dailyherald.com/?p=1345669"],["Daily Herald: Legal fight","https://www.dailyherald.com/?p=1345788"]],
+  c:[
+   {n:"Paula Deacon Garcia",p:"D",party:"Democratic",sub:"DuPage County Board member (Lisle)",info:[
+     "<span class='k'>Experience:</span> county board member since 2020 and chair of its finance committee. Previously a Village of Lisle floodplain manager.",
+     "<span class='k'>Platform:</span> end the clerk's lawsuits with the board, follow county accounting and procurement rules, make sure elections are properly funded, and keep digitizing vital records."]},
+   {n:"Patricia Kladis-Schiappa",p:"R",party:"Republican",sub:"Attorney (Burr Ridge)",info:[
+     "<span class='k'>Background:</span> Burr Ridge attorney. Unopposed in the GOP primary.",
+     "<span class='k'>Platform:</span> also says she would end the clerk's legal battle with the county board.",
+     "<span class='k'>Note:</span> I found limited coverage of her detailed positions."]}
+  ]},
+ {id:"ctreas", title:"For County Treasurer", vote:"Vote for ONE",
+  src:[["Patch: Yoo","https://patch.com/illinois/elmhurst/elmhurst-politico-seeks-county-office"],["Daily Herald: Henry","https://www.dailyherald.com/?p=20433"]],
+  c:[
+   {n:"Yeena Yoo",p:"D",party:"Democratic",sub:"DuPage County Board member (Elmhurst)",info:[
+     "<span class='k'>Experience:</span> county board member since 2022.",
+     "<span class='k'>Platform:</span> promises innovation and community-centered leadership. Her campaign launch was co-hosted by Board Chair Conroy and the building trades."]},
+   {n:"Gwen Henry",p:"R",party:"Republican",sub:"Incumbent Treasurer since 2006 (Wheaton)",info:[
+     "<span class='k'>Experience:</span> a CPA who has been treasurer since 2006. Former Wheaton mayor, county board member and forest preserve commissioner.",
+     "<span class='k'>Context:</span> won in 2022 with about 51%. Argues the job should go to an accounting and finance professional."]}
+  ]},
+ {id:"cb2a", title:"For Member of the County Board District 2", sub:"Full 4 Year Term", vote:"Vote for ONE",
+  src:[["Daily Herald: Board nominees","https://www.dailyherald.com/?p=1345667"],["Patch","https://patch.com/illinois/elmhurst/elmhurst-alderman-behind-early-returns-county-board"]],
+  c:[
+   {n:"Christopher Espinoza",p:"D",party:"Democratic",sub:"District 99 school board member (Downers Grove)",info:[
+     "<span class='k'>Background:</span> 26 years old, member of the Downers Grove District 99 high school board.",
+     "<span class='k'>Primary:</span> beat Elmhurst Alderman Guido Nardini with about 61%."]},
+   {n:"Robert \"Rusty\" Stevens",p:"R",party:"Republican",sub:"Villa Park",info:[
+     "<span class='k'>Background:</span> 68, a former precinct committeeman. Unopposed in the primary.",
+     "<span class='k'>Note:</span> I found limited coverage of his platform."]}
+  ]},
+ {id:"cb2b", title:"For Member of the County Board District 2", sub:"Full 2 Year Term", vote:"Vote for ONE",
+  src:[["Daily Herald: Walters","https://www.dailyherald.com/?p=1344189"],["Daily Herald: McClear","https://www.dailyherald.com/?p=1358975"]],
+  c:[
+   {n:"Mary Rada Walters",p:"D",party:"Democratic",sub:"Attorney (Lombard)",info:[
+     "<span class='k'>Background:</span> 40-year-old Lombard attorney. Won the primary with about 62%."]},
+   {n:"Theresa McClear",p:"R",party:"Republican",sub:"Hinsdale",info:[
+     "<span class='k'>Background:</span> 58, from Hinsdale. Unopposed in the primary.",
+     "<span class='k'>Note:</span> I found limited coverage of her platform."]}
+  ]},
+ {id:"fpp", title:"For President of the Forest Preserve", vote:"Vote for ONE",
+  src:[["Daily Herald: FP president race","https://www.dailyherald.com/?p=1359015"]],
+  c:[
+   {n:"Daniel Hebreard",p:"D",party:"Democratic",sub:"Incumbent President (Woodridge)",info:[
+     "<span class='k'>Experience:</span> joined the district as a ranger in 2005 and has been president since 2018.",
+     "<span class='k'>Record:</span> oversaw the $151M 2026 budget, which includes habitat restoration, a Maple Meadows golf renovation and Mayslake work. Emphasizes caring for existing natural areas."]},
+   {n:"Carl Schultz",p:"R",party:"Republican",sub:"Former commissioner (Aurora)",info:[
+     "<span class='k'>Experience:</span> forest preserve commissioner from 2002 to 2012. Holds a horticulture degree and owns a horticultural consulting business.",
+     "<span class='k'>Platform:</span> more efficient and transparent management. Says the district must maintain the historic buildings it owns, such as the Greene Valley barn."]}
+  ]},
+ {id:"fp2", title:"For Commissioner of the Forest Preserve District 2", vote:"Vote for ONE",
+  src:[["Daily Herald: FP primary","https://www.dailyherald.com/?p=1345660"]],
+  c:[
+   {n:"Tina Tyson-Dunne",p:"D",party:"Democratic",sub:"Incumbent Commissioner (Lombard)",info:[
+     "<span class='k'>Experience:</span> commissioner since 2020. Former chief of staff to then-Rep. Deb Conroy and former chair of the York Township Democrats.",
+     "<span class='k'>Platform:</span> wants to tighten spending, and has pushed an animal-grazing program for land management."]},
+   {n:"William \"Bill\" Wehrle",p:"R",party:"Republican",sub:"",info:[
+     "<span class='k'>Note:</span> I couldn't find a candidate profile or much coverage."]}
+  ]},
+ {id:"roe", title:"For Regional Superintendent of Schools", vote:"Vote for ONE",
+  src:[["DuPage ROE","https://www.dupageroe.org/?p=38137"],["Metea candidate fair","https://meteamedia.org/30294/news/from-meteas-candidate-fair-faces-of-2026-elections/"]],
+  c:[
+   {n:"Rebecca Gamboa",p:"D",party:"Democratic",sub:"",info:[
+     "<span class='k'>Platform:</span> teacher professional development, connecting schools to community resources, protecting schools from disruption caused by federal changes, and addressing teacher shortages.",
+     "<span class='k'>Note:</span> I found limited coverage of her background."]},
+   {n:"Amber M. Quirk",p:"R",party:"Republican",sub:"Incumbent Regional Superintendent",info:[
+     "<span class='k'>Experience:</span> regional superintendent since 2023. Before that, assistant regional superintendent, and an assistant principal and principal in Maercker District 60."]}
+  ]},
+ {section:"JUDICIAL"},
+ {id:"app", title:"For Judge of the Appellate Court", sub:"Third Judicial District · McDade vacancy", vote:"Vote for ONE",
+  src:[["ISBA 2026 evaluations","https://www.isba.org/judicial-elections/counties/will"]],
+  c:[
+   {n:"Margaret \"Peggy\" O'Connell",p:"D",party:"Democratic",sub:"DuPage Circuit Judge",info:[
+     "<span class='k'>Experience:</span> elected a DuPage circuit judge in 2020 and now presiding judge of the felony division. Former assistant state's attorney, assistant attorney general and private attorney.",
+     "<span class='k'>Bar rating:</span> Illinois State Bar Association: Recommended. Lawyers describe her as fair and prompt.",
+     "<span class='k'>Note:</span> she is also up for retention on this ballot."]},
+   {n:"Jason A. Helland",p:"R",party:"Republican",sub:"Judge (Ottawa area)",info:[
+     "<span class='k'>Bar rating:</span> Illinois State Bar Association: Recommended.",
+     "<span class='k'>Context:</span> ran for the same court in 2024 and lost to Linda Davenport."]}
+  ]},
+ {id:"circ", title:"For Judge of the Circuit Court", sub:"Eighteenth Judicial Circuit · 5th Subcircuit · Fullerton vacancy", vote:"Vote for ONE",
+  src:[["Illinois Courts announcement","https://www.illinoiscourts.gov/News/1618/Illinois-Supreme-Court-appoints-Terra-Costa-Howard-as-Circuit-Judge-in-DuPage-County/news-detail/"]],
+  c:[
+   {n:"Terra Costa Howard",p:"D",party:"Democratic",sub:"Appointed Circuit Judge · unopposed",info:[
+     "<span class='k'>Experience:</span> appointed by the Illinois Supreme Court in October 2025. Former state representative (2019–2025). Solo-practice attorney since 2003.",
+     "<span class='k'>Rating:</span> the screening committee rated her well-qualified and highly recommended for the appointment.",
+     "<span class='k'>Note:</span> no Republican candidate is running."]}
+  ]},
+ {id:"ret", retention:true, title:"Ballot for Judicial Candidates Seeking Retention in Office", sub:"Circuit Court, Eighteenth Judicial Circuit", vote:"Vote YES or NO on each", note:"Each judge needs at least 60% YES to stay on the bench. I couldn't find 2026 bar ratings for these judges. In 2020, when they first ran, the DuPage County Bar rated all four Highly Recommended.",
+  src:[["DCBA 2020 ratings","https://www.dcba.org/news/488521/DuPage-County-Bar-Association-Releases-Ratings-for-Judicial-Candidates.htm"],["ISBA judicial elections","https://www.isba.org/judicial-elections/counties/will"]],
+  c:[
+   {n:"Ann Celine Walsh",p:"O",party:"Retention",sub:"Circuit Judge since 2020",info:[
+     "<span class='k'>Background:</span> former supervisor of the DuPage State's Attorney's sex crimes, domestic violence and child abuse unit. Associate judge from 2014.",
+     "<span class='k'>2020 DCBA rating:</span> Highly Recommended."]},
+   {n:"Monique O'Toole",p:"O",party:"Retention",sub:"Circuit Judge since 2020",info:[
+     "<span class='k'>2020 DCBA rating:</span> Highly Recommended."]},
+   {n:"Richard D. Felice",p:"O",party:"Retention",sub:"Circuit Judge since 2020",info:[
+     "<span class='k'>Background:</span> former president of the Illinois State Bar Association.",
+     "<span class='k'>2020 DCBA rating:</span> Highly Recommended."]},
+   {n:"Margaret \"Peggy\" O'Connell",p:"O",party:"Retention",sub:"Circuit Judge since 2020",info:[
+     "<span class='k'>Note:</span> she is also running for the Appellate Court above.",
+     "<span class='k'>2020 DCBA rating:</span> Highly Recommended."]}
+  ]}
+];
+
+const KEY="york0372-picks";
+let picks={};
+try{picks=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){picks={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(picks))}catch(e){}}
+
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const root=document.getElementById("ballot");
+
+BALLOT.forEach(r=>{
+  if(r.section){const d=document.createElement("div");d.className="section";d.textContent=r.section;root.appendChild(d);return;}
+  const race=document.createElement("div");race.className="race"+(r.retention?" ret":"");
+  let h=`<div class="race-h"><div class="t">${esc(r.title)}</div>${r.sub?`<div class="s">${esc(r.sub)}</div>`:""}<div class="v">(${esc(r.vote)})</div></div>`;
+  if(r.note)h+=`<div class="race-note">${r.note}</div>`;
+  race.innerHTML=h;
+  r.c.forEach((c,i)=>{
+    const key=r.retention?`${r.id}:${i}`:r.id;
+    const el=document.createElement("div");el.className="cand "+c.p;
+    const nm=c.n2?`${esc(c.n.toUpperCase())}<br>${esc(c.n2.toUpperCase())}`:esc(c.n.toUpperCase());
+    el.innerHTML=`<div class="row">
+        ${r.retention?"":`<span class="box" role="checkbox" aria-label="Mark ${esc(c.n)}" tabindex="0"></span>`}
+        <div class="name">${nm}${c.sub?`<small>${esc(c.sub)}</small>`:""}</div>
+        <span class="party">${esc(c.party)}</span><span class="chev">▶</span></div>
+      ${r.retention?`<div class="yn"><label data-v="YES"><span class="box"></span>YES</label><label data-v="NO"><span class="box"></span>NO</label></div>`:""}
+      <div class="info"><ul>${c.info.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;
+    const row=el.querySelector(".row");
+    row.addEventListener("click",e=>{
+      if(e.target.classList.contains("box")){
+        picks[key]=picks[key]===i?undefined:i; if(picks[key]===undefined)delete picks[key];
+        save();refresh();return;
+      }
+      el.classList.toggle("open");
+    });
+    const b=row.querySelector(".box");
+    if(b)b.addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();b.click();}});
+    if(r.retention){
+      el.querySelectorAll(".yn label").forEach(l=>l.addEventListener("click",()=>{
+        const v=l.dataset.v; picks[key]=picks[key]===v?undefined:v; if(picks[key]===undefined)delete picks[key];
+        save();refresh();
+      }));
+    }
+    el.dataset.key=key;el.dataset.idx=i;
+    race.appendChild(el);
+  });
+  if(r.write){race.insertAdjacentHTML("beforeend",`<div class="write"><span class="box" style="opacity:.35"></span><span class="line"></span><span>Write-in</span></div>`);}
+  race.insertAdjacentHTML("beforeend",`<div class="src">Sources: ${r.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])}</a>`).join(" · ")}</div>`);
+  root.appendChild(race);
+});
+
+function refresh(){
+  document.querySelectorAll(".cand").forEach(el=>{
+    const k=el.dataset.key,i=+el.dataset.idx;
+    if(k.startsWith("ret:")){
+      el.querySelectorAll(".yn label").forEach(l=>l.classList.toggle("on",picks[k]===l.dataset.v));
+    }else el.classList.toggle("picked",picks[k]===i);
+  });
+  const out=[];
+  BALLOT.forEach(r=>{
+    if(r.section)return;
+    if(r.retention){r.c.forEach((c,i)=>{const v=picks[`${r.id}:${i}`];if(v)out.push([`Retain ${c.n}?`,v,"O"]);});}
+    else if(picks[r.id]!==undefined){const c=r.c[picks[r.id]];out.push([r.title.replace(/^For /,"")+(r.sub?` (${r.sub})`:""),c.n+(c.n2?" / "+c.n2:""),c.p]);}
+  });
+  document.getElementById("sumBody").innerHTML=out.length
+    ?`<div class="grid">${out.map(o=>`<div class="it"><span>${esc(o[0])}</span><b class="${o[2]}">${esc(o[1])}</b></div>`).join("")}</div>`
+    :`<div class="empty">No marks yet. Click the box beside a name to practice-mark it.</div>`;
+}
+document.getElementById("expandAll").onclick=()=>document.querySelectorAll(".cand").forEach(e=>e.classList.add("open"));
+document.getElementById("collapseAll").onclick=()=>document.querySelectorAll(".cand").forEach(e=>e.classList.remove("open"));
+document.getElementById("clearPicks").onclick=()=>{picks={};save();refresh();};
+refresh();
+</script>
+</body>
+</html>
