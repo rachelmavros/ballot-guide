@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>York 023-0372 Ballot Guide — Nov 3, 2026</title>
+<title>DuPage Ballot Guide — Nov 3, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -27,6 +27,10 @@
   .hdr .mid span{font-size:12px}
   .hdr .right{text-align:right;font-weight:700;font-size:15px}
   .hdr .right span{display:block;font-weight:400;font-size:12px}
+  .picker{display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:center;background:#f4f2ec;border:2px solid var(--rule);padding:10px 12px;margin:0 0 14px}
+  .picker label{font-weight:800;font-size:13px;letter-spacing:.03em;text-transform:uppercase}
+  .picker select{font:600 14px "Open Sans",sans-serif;padding:7px 10px;border:2px solid #111;border-radius:3px;background:#fff;min-width:270px;cursor:pointer}
+  .picker .hint{font-size:11.5px;color:var(--muted);flex-basis:100%;text-align:center}
   .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
   .toolbar button{font:600 12px "Open Sans",sans-serif;border:1.5px solid #222;background:#fff;padding:6px 10px;border-radius:3px;cursor:pointer}
   .toolbar button:hover{background:#f2f2f2}
@@ -97,10 +101,11 @@
 <div class="sheet">
   <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
   <div class="topline">SAMPLE BALLOT · RESEARCH GUIDE</div>
-  <div class="notice">Personal study copy built from the York 023-0372 sample ballot. Not an official ballot.</div>
+  <div class="notice">Personal study copy built from DuPage County sample ballots. Not an official ballot.</div>
+  <div class="picker"><label for="sel">Select your ballot:</label><select id="sel"><option value="york-023-0372">York Township · Precinct 023-0372</option><option value="milton-040-0296">Milton Township · Precinct 040-0296</option></select><span class="hint">Races change with the ballot. Marks are saved separately for each ballot.</span></div>
   <div class="hdr">
-    <div style="font-size:12px;color:#333">DuPage County</div>
-    <div class="mid"><b>GENERAL ELECTION</b><span>York 023-0372 · DuPage County</span></div>
+    <div style="font-size:12px;color:#333"><span class="ptown"></span><br>DuPage County</div>
+    <div class="mid"><b>GENERAL ELECTION</b><span><b class="pname" style="display:inline;font-size:14px"></b> · DuPage County</span></div>
     <div class="right">November 3, 2026<span>Election Day</span></div>
   </div>
 
@@ -125,11 +130,11 @@
   </div>
 
   <div class="foot">Read Both Sides of the Ballot</div>
-  <div class="disclaim">Candidate notes were compiled on Nov 2, 2026, from press coverage, Ballotpedia, the DuPage County Clerk's candidate listing and Illinois State Bar Association ratings. Confirm details with official sources. Your official ballot is the one handed to you at your polling place.</div>
+  <div class="disclaim">Covers DuPage precincts York 023-0372 and Milton 040-0296 only. Candidate notes were compiled on Nov 2, 2026, from press coverage, Ballotpedia, the DuPage County Clerk's candidate listing and Illinois State Bar Association ratings. Confirm details with official sources. Your official ballot is the one handed to you at your polling place.</div>
 </div>
 
 <script>
-const BALLOT = [
+const POOL = [
  {section:"FEDERAL"},
  {id:"sen", title:"For United States Senator", vote:"Vote for ONE", note:"Open seat. Sen. Dick Durbin is retiring after serving since 1997.",
   src:[["Axios voter guide","https://www.axios.com/local/chicago/2026/10/07/illinois-u-s-senate-election-stratton-vs-tracy-voter-guide"],["Capitol News Illinois (Harrington)","https://capitolnewsillinois.com/news/third-party-u-s-senate-candidate-gives-voters-an-alternative/"]],
@@ -356,17 +361,99 @@ const BALLOT = [
    {n:"Margaret \"Peggy\" O'Connell",p:"O",party:"Retention",sub:"Circuit Judge since 2020",info:[
      "<span class='k'>Note:</span> she is also running for the Appellate Court above.",
      "<span class='k'>2020 DCBA rating:</span> Highly Recommended."]}
+  ]},
+
+ {id:"us6", title:"For Representative in Congress", sub:"Sixth Congressional District", vote:"Vote for ONE", note:"A rematch of 2024, when Casten won about 54% to 46%.",
+  src:[["Ballotpedia: IL-6","https://ballotpedia.org/Illinois%27_6th_Congressional_District_election,_2026"],["Daily Herald: Primary","https://www.dailyherald.com/?p=1345648"]],
+  c:[
+   {n:"Sean Casten",p:"D",party:"Democratic",sub:"Incumbent U.S. Representative (Downers Grove)",info:[
+     "<span class='k'>Experience:</span> in Congress since 2019, after unseating longtime Republican Rep. Peter Roskam in 2018.",
+     "<span class='k'>Primary:</span> easily beat first-time challenger Joey Ruzevich, and has a large fundraising advantage.",
+     "<span class='k'>Stance:</span> an outspoken critic of the Trump administration."]},
+   {n:"Niki Conforti",p:"R",party:"Republican",sub:"Energy consultant (Glen Ellyn)",info:[
+     "<span class='k'>Background:</span> energy consultant since 2017. Previously worked in healthcare and owned a staffing business.",
+     "<span class='k'>Context:</span> the 2024 GOP nominee, who lost to Casten by about 8 points. Argues Casten has favored his party's left wing over the district."]}
+  ]},
+ {id:"us3", title:"For Representative in Congress", sub:"Third Congressional District", vote:"Vote for ONE", note:"The race is rated Solid Democratic. Ramirez won about 67% in 2024.",
+  src:[["Ballotpedia: IL-3","https://ballotpedia.org/Illinois%27_3rd_Congressional_District_election,_2026"],["Ballotpedia: Oakley","https://ballotpedia.org/Angel_Oakley"]],
+  c:[
+   {n:"Delia Ramirez",p:"D",party:"Democratic",sub:"Incumbent U.S. Representative",info:[
+     "<span class='k'>Experience:</span> in Congress since 2023. Before that, a state representative, and the first Guatemalan American elected to the Illinois General Assembly.",
+     "<span class='k'>Record:</span> in Springfield she passed the law creating an elected Chicago school board.",
+     "<span class='k'>Backing:</span> endorsed by progressive groups including Justice Democrats, MoveOn and Our Revolution."]},
+   {n:"Angel Oakley",p:"R",party:"Republican",sub:"Consultant",info:[
+     "<span class='k'>Background:</span> holds bachelor's and master's degrees from Judson University. Has worked as a consultant, cannabis educator and adviser, CBD broker and adjunct instructor.",
+     "<span class='k'>Context:</span> ran in 2024 as an independent write-in and got under 100 votes. Federal filings show little or no fundraising."]}
+  ]},
+ {id:"ss24", title:"For State Senator", sub:"Twenty-Fourth Legislative District", vote:"Vote for ONE", note:"Competitive seat: Lewis won it in 2022 with 51.9%.",
+  src:[["Daily Herald endorsement piece","https://www.dailyherald.com/?p=1358904"],["Ballotpedia: SD-24","https://ballotpedia.org/Illinois_State_Senate_District_24"]],
+  c:[
+   {n:"Benjamin \"Ben\" McAdams",p:"D",party:"Democratic",sub:"Community organizer",info:[
+     "<span class='k'>Background:</span> 29-year-old progressive organizer in DuPage and northwest Cook suburbs. Has finance and economics degrees from Elmhurst University, and worked on Bernie Sanders' campaign in college.",
+     "<span class='k'>Platform:</span> healthcare access, limiting dark money, regulating AI and data centers, due process rights and lowering property taxes.",
+     "<span class='k'>Backing:</span> West Suburban DSA ran canvasses for him."]},
+   {n:"Seth Lewis",p:"R",party:"Republican",sub:"Incumbent State Senator (Bartlett)",info:[
+     "<span class='k'>Experience:</span> state senator since 2023, after two years in the House. Former Bartlett fire district trustee and longtime State Farm agent.",
+     "<span class='k'>Record:</span> served on the Senate GOP budget negotiating team, and in 2025 was the only Republican to back the transit rescue package.",
+     "<span class='k'>Backing:</span> endorsed by the Daily Herald."]}
+  ]},
+ {id:"h47", title:"For Representative in the General Assembly", sub:"Forty-Seventh Representative District", vote:"Vote for ONE", note:"Open seat. Republican Rep. Amy Grant is retiring.",
+  src:[["Daily Herald: Bray-Parker launch","https://www.dailyherald.com/20250811/illinois-state-politics/wheaton-city-councilwoman-running-for-state-house-seat/"],["Daily Herald endorsements","https://www.dailyherald.com/?p=1358904"]],
+  c:[
+   {n:"Erica Bray-Parker",p:"D",party:"Democratic",sub:"Wheaton City Council (at-large) · teacher",info:[
+     "<span class='k'>Experience:</span> at-large member of the Wheaton City Council since 2019. Teacher for 30+ years, now teaching civics and psychology at Glenbard North.",
+     "<span class='k'>Platform:</span> affordability, plus better coordination between state, county and local government."]},
+   {n:"Robert A. Vrankovich",p:"R",party:"Republican",sub:"",info:[
+     "<span class='k'>Backing:</span> endorsed by the Daily Herald for this seat.",
+     "<span class='k'>Note:</span> I found limited coverage of his background."]}
+  ]},
+ {id:"cb4a", title:"For Member of the County Board District 4", sub:"Full 4 Year Term", vote:"Vote for ONE",
+  src:[["Daily Herald: Board nominees","https://www.dailyherald.com/?p=1345667"],["DuPage County: Eckhoff","https://www.dupagecounty.gov/eckhoff"]],
+  c:[
+   {n:"Paula McGowen",p:"D",party:"Democratic",sub:"Milton Township trustee (Glen Ellyn)",info:[
+     "<span class='k'>Experience:</span> Milton Township trustee and DuPage Regional School Board trustee. Works in property rentals. Age 71.",
+     "<span class='k'>Note:</span> she ran for this board in Republican primaries in 2014 and 2022. This time she is running as a Democrat.",
+     "<span class='k'>Primary:</span> beat Syed Hussain."]},
+   {n:"Grant Eckhoff",p:"R",party:"Republican",sub:"Incumbent since 2002 (Wheaton)",info:[
+     "<span class='k'>Experience:</span> on the county board since 2002, after serving on the Wheaton City Council from 1989 to 2002. Attorney.",
+     "<span class='k'>Record:</span> sits on the finance committee. Says he has focused on consolidating government units and fighting the opioid crisis."]}
+  ]},
+ {id:"cb4b", title:"For Member of the County Board District 4", sub:"Full 2 Year Term", vote:"Vote for ONE",
+  src:[["Daily Herald: Michaud","https://www.dailyherald.com/?p=1358988"],["Daily Herald: 2018 result","https://www.dailyherald.com/?p=91893"]],
+  c:[
+   {n:"Mary FitzGerald Ozog",p:"D",party:"Democratic",sub:"Incumbent County Board member (Glen Ellyn)",info:[
+     "<span class='k'>Experience:</span> on the county board since 2018, with leadership roles on several committees. Former Glenbard District 87 school board member.",
+     "<span class='k'>Background:</span> transportation planner. Emphasizes collaboration."]},
+   {n:"Isobel Michaud",p:"R",party:"Republican",sub:"Wheaton",info:[
+     "<span class='k'>Background:</span> 29-year-old Wheaton resident running for office for the first time.",
+     "<span class='k'>Platform:</span> criticizes the board for keeping, and then raising, the county gas tax it doubled during COVID. Focused on connecting residents to good jobs."]}
   ]}
 ];
 
-const KEY="york0372-picks";
+
+const RACE={}; POOL.forEach(r=>{if(r.id)RACE[r.id]=r;});
+const BALLOTS={
+ "york-023-0372":{label:"York 023-0372",town:"York Township",order:["§FEDERAL","sen","us6","§STATE","gov","ag","sos","comp","treas","ss21","h42","§COUNTY","chair","sheriff","clerk","ctreas","cb2a","cb2b","fpp","fp2","roe","§JUDICIAL","app","circ","ret"]},
+ "milton-040-0296":{label:"Milton 040-0296",town:"Milton Township",order:["§FEDERAL","sen","us3","§STATE","gov","ag","sos","comp","treas","ss24","h47","§COUNTY","chair","sheriff","clerk","ctreas","cb4a","cb4b","fpp","roe","§JUDICIAL","app","ret"]}
+};
+let CUR=(location.hash||"").slice(1); if(!BALLOTS[CUR])CUR="york-023-0372";
+let BALLOT=[];
 let picks={};
-try{picks=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){picks={}}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(picks))}catch(e){}}
+const KEY=()=>"ballot-picks-"+CUR;
+function load(){try{picks=JSON.parse(localStorage.getItem(KEY())||"{}")}catch(e){picks={}}}
+function save(){try{localStorage.setItem(KEY(),JSON.stringify(picks))}catch(e){}}
 
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
 const root=document.getElementById("ballot");
-
+function render(){
+  const B=BALLOTS[CUR];
+  BALLOT=B.order.map(k=>k.startsWith("§")?{section:k.slice(1)}:RACE[k]);
+  root.innerHTML="";
+  document.querySelectorAll(".pname").forEach(e=>e.textContent=B.label);
+  document.querySelectorAll(".ptown").forEach(e=>e.textContent=B.town);
+  document.title=B.label+" Ballot Guide — Nov 3, 2026";
+  document.getElementById("sel").value=CUR;
+  load();
 BALLOT.forEach(r=>{
   if(r.section){const d=document.createElement("div");d.className="section";d.textContent=r.section;root.appendChild(d);return;}
   const race=document.createElement("div");race.className="race"+(r.retention?" ret":"");
@@ -406,6 +493,8 @@ BALLOT.forEach(r=>{
   race.insertAdjacentHTML("beforeend",`<div class="src">Sources: ${r.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])}</a>`).join(" · ")}</div>`);
   root.appendChild(race);
 });
+  refresh();
+}
 
 function refresh(){
   document.querySelectorAll(".cand").forEach(el=>{
@@ -427,7 +516,9 @@ function refresh(){
 document.getElementById("expandAll").onclick=()=>document.querySelectorAll(".cand").forEach(e=>e.classList.add("open"));
 document.getElementById("collapseAll").onclick=()=>document.querySelectorAll(".cand").forEach(e=>e.classList.remove("open"));
 document.getElementById("clearPicks").onclick=()=>{picks={};save();refresh();};
-refresh();
+document.getElementById("sel").onchange=e=>{CUR=e.target.value;try{history.replaceState(null,"","#"+CUR)}catch(_){location.hash=CUR}render();window.scrollTo(0,0);};
+window.addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(BALLOTS[h]&&h!==CUR){CUR=h;render();}});
+render();
 </script>
 </body>
 </html>
